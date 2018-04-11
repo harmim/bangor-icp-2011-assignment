@@ -12,7 +12,7 @@ $(DOC).pdf: $(DOC).tex
 
 .PHONY: spell
 spell:
-	aspell -t -c $(DOC).tex
+	aspell -t --tex-check-comments -c $(DOC).tex
 
 
 .PHONY: clean
