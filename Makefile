@@ -19,4 +19,4 @@ spell:
 clean:
 	rm -f *.aux *.lof *.log *.lot *.fls *.out *.toc *.fmt *.fot *.cb *.cb2 \
 		.*.lb *.dvi *.xdv *.ps $(INC_DIR)/*-converted-to.* *.fdb_latexmk \
-		*.synctex* *.pdfsync
+		*.synctex* *.pdfsync *.bak
