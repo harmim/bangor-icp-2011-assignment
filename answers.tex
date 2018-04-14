@@ -56,7 +56,10 @@
 			are sending data can use these time slots. Time slots are allocated statistically.
 
 			$ \text{raw data rate of the user} = \boldsymbol{B \cdot \frac{1}{T}\,\text{\textbf{b}}} $ \\
-			$ \text{raw data rate of the entire TDM channel} = \boldsymbol{B \cdot N \cdot \frac{1}{T}\,\text{\textbf{b}}} $
+			$
+				\text{raw data rate of the entire TDM channel}
+				= \boldsymbol{B \cdot N \cdot \frac{1}{T}\,\text{\textbf{b}}}
+			$
 
 			$ \text{user A transmission bandwidth} = 10 \cdot 2 = \boldsymbol{20\,\text{\textbf{Mb/s}}} $ \\
 			$ \text{user C transmission bandwidth} = \frac{10}{2} = \boldsymbol{5\,\text{\textbf{Mb/s}}} $
@@ -171,14 +174,14 @@
 			that has received this corruption or computer A could waiting for some acknowledgment information which
 			has not received.
 
-			Error control mechanisms are still required at layer 4 because sending data are basically divided on multiple
-			packets and some of these packets may be dropped, lost or it could be lost their original order and such errors
-			could be detected only at layer 4 of receiving side.
+			Error control mechanisms are still required at layer 4 because sending data are basically divided on
+			multiple packets and some of these packets may be dropped, lost or it could be lost their original order
+			and such errors could be detected only at layer 4 of receiving side.
 
 		\item % 6.
-			TCP in conjunction with IP can ensure the proper message delivery to the destination because TCP operates at
-			layer 4 and ensures the reliability of user's message delivery, re-transmit data lost by the lower layers and
-			IP operates at layer 3 and is responsible for routing and delivering individual packets.
+			TCP in conjunction with IP can ensure the proper message delivery to the destination because TCP operates
+			at layer 4 and ensures the reliability of user's message delivery, re-transmit data lost by the lower
+			layers and IP operates at layer 3 and is responsible for routing and delivering individual packets.
 
 			Diagram shows relationship between a TCP segment and an IP datagram:
 			\begin{figure}[H]
@@ -212,16 +215,19 @@
 
 			\textbf{Connection-oriented packet switching} -- End-to-end virtual connection to the destination is
 			established using single request packet that contains the source and destination addresses. The subsequent
-			packets of the same message just need to carry the marking information, which defines the already established
-			virtual connection. There is no need to look at addressing information to calculate a path for each packet,
-			the intermediate nodes only read the marking information to route the packet to its destination.
+			packets of the same message just need to carry the marking information, which defines the already
+			established virtual connection. There is no need to look at addressing information to calculate a path for
+			each packet, the intermediate nodes only read the marking information to route the packet to its
+			destination.
 
-			\textbf{Connection-less packet switching} -- Each packet of a message is an independent unit that contains the
-			source and destination addresses. Each packet is independently routed at each intermediate nodes it crosses.
+			\textbf{Connection-less packet switching} -- Each packet of a message is an independent unit that contains
+			the source and destination addresses. Each packet is independently routed at each intermediate nodes it
+			crosses.
 
 		\item % 10.
-			Routing table in a connection-less packet switched network \textbf{can not} have two entries with the same destination
-			address because this routing table must unambiguously maps destination addresses to output ports.
+			Routing table in a connection-less packet switched network \textbf{can not} have two entries with the same
+			destination address because this routing table must unambiguously maps destination addresses to output
+			ports.
 
 			Switching table in a connection-oriented packet switched network
 			\begin{enumerate}[i)]
@@ -231,25 +237,33 @@
 			\end{enumerate}
 
 		\item % 11.
-			\textbf{Packet switching} -- End-to-end virtual connection between two devices. Communication connection is always
-			available and may be shared by many different users. Messages are split into a number of packets, which will be
-			routed and switched separately. Cost-effective, because if no data is being transmitted, there are no transmission
-			resources being wasted and bandwidth is shared with many users. Latency and loss of packets are the main concerns.
+			\textbf{Packet switching} -- End-to-end virtual connection between two devices. Communication connection is
+			always available and may be shared by many different users. Messages are split into a number of packets,
+			which will be routed and switched separately. Cost-effective, because if no data is being transmitted,
+			there are no transmission resources being wasted and bandwidth is shared with many users. Latency and
+			loss of packets are the main concerns.
 
-			\textbf{Circuit switching} -- End-to-end physical connection between two devices. Established before the start of
-			a communication section, shared by two users only and remains open for the entire communication section.
-			Continuous data flow between two users. Not cost-effective, because stay on the line regardless of the usage
-			of that line and bandwidth is no shared. A certain QoS can be guaranteed.
+			\textbf{Circuit switching} -- End-to-end physical connection between two devices. Established before the
+			start of a communication section, shared by two users only and remains open for the entire communication
+			section. Continuous data flow between two users. Not cost-effective, because stay on the line regardless
+			of the usage of that line and bandwidth is no shared. A certain QoS can be guaranteed.
 
 			Addressing mechanisms table:
 			\begin{table}[H]
 				\centering
 				\begin{tabular}{| c | c | c | c |}
 					\hline
+
 					& \multicolumn{3}{c |}{\textbf{Communication Stage}} \\ \cline{2-4}
-					\multirow{-2}{*}{\textbf{Network Type}} & \textbf{Setup} & \textbf{Data Transmission} & \textbf{Teardown} \\ \hline
+
+					\multirow{-2}{*}{\textbf{Network Type}}
+						& \textbf{Setup} & \textbf{Data Transmission} & \textbf{Teardown} \\ \hline
+
 					\textbf{Circuit Switching} & end-to-end & \cellcolor{gray} & local \\ \hline
-					\textbf{Connection-less Packet Switching} & \cellcolor{gray} & end-to-end & \cellcolor{gray} \\ \hline
+
+					\textbf{Connection-less Packet Switching} & \cellcolor{gray} & end-to-end & \cellcolor{gray}
+						\\ \hline
+
 					\textbf{Connection-oriented Packet Switching} & end-to-end & local & local \\ \hline
 				\end{tabular}
 				\caption{Addressing mechanisms}
@@ -257,8 +271,8 @@
 			\end{table}
 
 		\item % 12.
-			Frame Relay can operate in a multi-protocol environment because it handles all protocols. It simply encapsulates another
-			protocol into a Frame Relay envelope and carries it through the network.
+			Frame Relay can operate in a multi-protocol environment because it handles all protocols. It simply
+			encapsulates another protocol into a Frame Relay envelope and carries it through the network.
 
 		\item % 13.
 			\textbf{X.25:}
@@ -282,11 +296,12 @@
 			\textbf{Frame Relay:}
 			\begin{description}
 				\item
-					Payload error control -- The intermediate nodes does not correct data errors. Error control at endpoints of networks.
+					Payload error control -- The intermediate nodes does not correct data errors. Error control at
+					endpoints of networks.
 
 				\item
-					Latency -- Delay is reduced because the intermediate nodes does not correct data errors. Latency still could be a
-					problem due to large packet size.
+					Latency -- Delay is reduced because the intermediate nodes does not correct data errors. Latency
+					still could be a problem due to large packet size.
 
 				\item
 					Packet size -- Large packet size (up to 9\,000 bytes and variable).
@@ -301,70 +316,77 @@
 			\textbf{Asynchronous Transfer Mode (ATM):}
 			\begin{description}
 				\item
-					Payload error control -- No payload error checking is made in the core of the networks. Payload error control
-					at endpoints.
+					Payload error control -- No payload error checking is made in the core of the networks.
+					Payload error control at endpoints.
 
 				\item
-					Latency -- Latency is reduced due to uniform packet size. Time delay is minimized because no payload error
-					checking is made in the core of the networks, routing time at each node across networks is minimizing and
-					switching can be performed by hardware.
+					Latency -- Latency is reduced due to uniform packet size. Time delay is minimized because no
+					payload error checking is made in the core of the networks, routing time at each node across
+					networks is minimizing and switching can be performed by hardware.
 
 				\item
 					Packet size -- Uniform 53-byte packet (5 bytes for addressing information and 48 bytes for payload).
 
 				\item
-					Data transmission capacity -- Speed can be very high (10\,Gb/s to 160\,Gb/s, Tb/s for some new products).
+					Data transmission capacity -- Speed can be very high
+					(10\,Gb/s to 160\,Gb/s, Tb/s for some new products).
 
 				\item
-					Types of traffic supported -- Suitable for real-time traffic. Carries voice, data, multimedia, images, and
-					other forms of traffic, so it is suitable for all kinds of traffic.
+					Types of traffic supported -- Suitable for real-time traffic. Carries voice, data, multimedia,
+					images, and other forms of traffic, so it is suitable for all kinds of traffic.
 			\end{description}
 
 		\item % 14.
-			\textbf{Physical layer} -- Provides the physical transportation of cells across network. It carries ATM cells rather
-			than individual bits. These cells are multiplexed with other traffic for transmission.
+			\textbf{Physical layer} -- Provides the physical transportation of cells across network. It carries ATM
+			cells rather than individual bits. These cells are multiplexed with other traffic for transmission.
 			Physical layer defines transmission media, transmission rate, physical interface and coding schemes.
 
-			\textbf{ATM layer} -- Switches the cells around the network based on routing information. ATM layer provides routing,
-			traffic management, switching and multiplexing services. Process outgoing traffic by accepting 48-byte segments from
-			the AAL sub-layers and transforming them into 53-byte cells by adding a 5-byte header.
+			\textbf{ATM layer} -- Switches the cells around the network based on routing information. ATM layer
+			provides routing, traffic management, switching and multiplexing services. Process outgoing traffic by
+			accepting 48-byte segments from the AAL sub-layers and transforming them into 53-byte cells by adding
+			a 5-byte header.
 
-			\textbf{ATM adaptation layer (AAL)} -- Assembles and disassembles broadband services into a stream of cells. The native
-			traffic stream goes through the ALL, where it is segmented into 48-byte cells. ALL accepts any type of payload, both
-			data frames and continuous stream of bits. AAL uses two sub-layers: the convergence sub-layer (CS) which guarantees
-			the integrity of the data and the segmentation and reassembly sub-layer (SAR) where assembles and disassembles is
-			performed. ATM defines four versions of the AAL: AAL1, AAL2, AAL3/4 and AAL5.
+			\textbf{ATM adaptation layer (AAL)} -- Assembles and disassembles broadband services into a stream of
+			cells. The native traffic stream goes through the ALL, where it is segmented into 48-byte cells. ALL
+			accepts any type of payload, both data frames and continuous stream of bits. AAL uses two sub-layers:
+			the convergence sub-layer (CS) which guarantees the integrity of the data and the segmentation and
+			reassembly sub-layer (SAR) where assembles and disassembles is performed. ATM defines four versions
+			of the AAL: AAL1, AAL2, AAL3/4 and AAL5.
 
 		\item % 15.
 			\begin{enumerate}[i)]
 				\item % i)
-					\textbf{1} padding byte is required. \textbf{1\,087} data units are passed from SAR sub-layer to ATM layer.
-					\textbf{1\,087} ATM cells are produced.
+					\textbf{1} padding byte is required. \textbf{1\,087} data units are passed from SAR sub-layer to
+					ATM layer. \textbf{1\,087} ATM cells are produced.
 
 				\item % ii)
-					Minimum number of ATM cells produced from an input packet may be \textbf{1} and maximum number may be \textbf{1\,490}.
+					Minimum number of ATM cells produced from an input packet may be \textbf{1} and maximum number
+					may be \textbf{1\,490}.
 
 				\item % iii)
-					The value of \texttt{Btag} is repeated in each cell to identify all the cells belonging to the same packet. The value is
-					the same as the value of \texttt{Etag}.
-					So if there are 47\,787 bytes of data, then the same \texttt{Btag/Etag} is repeated \textbf{2\,174 times} and for
-					maximum number of ATM cells, the same \texttt{Btag/Etag} is repeated \textbf{2\,980 times}.
+					The value of \texttt{Btag} is repeated in each cell to identify all the cells belonging to the
+					same packet. The value is the same as the value of \texttt{Etag}.
+					So if there are 47\,787 bytes of data, then the same \texttt{Btag/Etag} is repeated
+					\textbf{2\,174 times} and for maximum number of ATM cells, the same \texttt{Btag/Etag} is
+					repeated \textbf{2\,980 times}.
 
 				\item % iv)
-					\textbf{LI (length indicator)} in CS header is the 6-bit field indicates how much of the final packet is data.
-					\textbf{SF (start field)} in SAR header defines the offset from the beginning of the packet.
+					\textbf{LI (length indicator)} in CS header is the 6-bit field indicates how much of the final
+					packet is data. \textbf{SF (start field)} in SAR header defines the offset from the beginning
+					of the packet.
 			\end{enumerate}
 
 		\item % 16.
-			\textbf{Baseband transmission} -- Transmits a digital signal directly through a cable, thus one signal is allowed
-			at any given time. It is less expensive to implement but capacity and transmission length is limited.
+			\textbf{Baseband transmission} -- Transmits a digital signal directly through a cable, thus one
+			signal is allowed at any given time. It is less expensive to implement but capacity and transmission
+			length is limited.
 
-			\textbf{Broadband transmission} -- Signals are transmitted using carrier waves of different frequencies, thus
-			multiple signals are allowed to transmit simultaneously. It is more expensive to purchase and maintain but
-			bandwidth and length of transmission is not so limited.
+			\textbf{Broadband transmission} -- Signals are transmitted using carrier waves of different frequencies,
+			thus multiple signals are allowed to transmit simultaneously. It is more expensive to purchase and
+			maintain but bandwidth and length of transmission is not so limited.
 
-			\textbf{Topologies usage} -- The \textbf{tree} topology is commonly used in broadband LANs and the \textbf{bus},
-			\textbf{ring} and \textbf{star} topologies are used in basedband LANs
+			\textbf{Topologies usage} -- The \textbf{tree} topology is commonly used in broadband LANs and the
+			\textbf{bus}, \textbf{ring} and \textbf{star} topologies are used in basedband LANs.
 
 		\item % 17.
 			Most common LAN topologies diagrams:
@@ -397,10 +419,10 @@
 				\end{minipage}
 			\end{figure}
 
-			\textbf{Tree topology} -- The tree topology has a root node, which forms the base of the network. The root node then communicates
-			with a number of smaller nodes, and those in turn communicate with an even greater number of smaller nodes. Tree topology is
-			actually combination of star and bus topology. Tree topology has binary tree structure. All transmission must pass through
-			the root node.
+			\textbf{Tree topology} -- The tree topology has a root node, which forms the base of the network. The
+			root node then communicates with a number of smaller nodes, and those in turn communicate with an even
+			greater number of smaller nodes. Tree topology is actually combination of star and bus topology.
+			Tree topology has binary tree structure. All transmission must pass through the root node.
 
 		\item % 18.
 			Spanning trees diagrams (blocking ports are marked by dashed lines):
@@ -424,49 +446,56 @@
 			\end{figure}
 
 		\item % 19.
-			\textbf{Token passing} -- The master node inserts a token (specially formatted packet) into the ring. The token goes through
-			the ring and is regenerated by each node it passes. When a node need to send a data, it waits for the token to pass by and grabs
-			it off the circle. The node then can send the data. The data sent goes through the ring and are examined and regenerated by
-			each node. Once the receiving node receives the data, it marks them as received then it regenerates them and re-injects them.
-			This marks tells the sender that the data was received. The sender then generate a new token and injects it into the ring.
+			\textbf{Token passing} -- The master node inserts a token (specially formatted packet) into the ring.
+			The token goes through the ring and is regenerated by each node it passes. When a node need to send a data,
+			it waits for the token to pass by and grabs it off the circle. The node then can send the data.
+			The data sent goes through the ring and are examined and regenerated by each node. Once the receiving node
+			receives the data, it marks them as received then it regenerates them and re-injects them. This marks tells
+			the sender that the data was received. The sender then generate a new token and injects it into the ring.
 
-			\textbf{CSMA/CD} -- When a node need to send a data, it set \texttt{attempt counter} to 1 and checks if there is some other
-			transmitting node, if there is then it waits until there is no transmission and then it starts transmitting. Transmitting node also
-			in meantime checks if there is collision, if there is not collision, it can transmit another data, checks for collision again until
-			all data is transmitted. If there is collision, node waits some random time, increments \texttt{attempt counter} and then it
-			could tries transmit again. If \texttt{attempt counter} is greater than maximum of possible attempts then there is something
-			wrong and transmission is stopped.
+			\textbf{CSMA/CD} -- When a node need to send a data, it set \texttt{attempt counter} to 1 and checks
+			if there is some other transmitting node, if there is then it waits until there is no transmission and then
+			it starts transmitting. Transmitting node also in meantime checks if there is collision, if there is not
+			collision, it can transmit another data, checks for collision again until all data is transmitted. If there
+			is collision, node waits some random time, increments \texttt{attempt counter} and then it could tries
+			transmit again. If \texttt{attempt counter} is greater than maximum of possible attempts then there is
+			something wrong and transmission is stopped.
 
 		\item % 20.
 			The minimum frame size if we increase the data rate to 100\,Mb/s will be
 			$ 512 \cdot 10 = \boldsymbol{5\,120\,\text{\textbf{bits}}} $.
 
 		\item % 21.
-			Bridges can solve traffic problems encountered in LANs because LANs can be divided into several parts using bridges
-			and nodes on each part are said to be in separate collision domains. If nodes from different parts of the LAN, which
-			are separated by bridges, transmit at the same time, they no longer collide witch each other.
+			Bridges can solve traffic problems encountered in LANs because LANs can be divided into several parts
+			using bridges and nodes on each part are said to be in separate collision domains. If nodes from different
+			parts of the LAN, which are separated by bridges, transmit at the same time, they no longer collide witch
+			each other.
 
-			\textbf{Procedure of building up bridge dynamic table that maps addresses to ports} -- Bridges inspects both the
-			destination and source addresses. The source addresses are used for adding entries to the table and for updating purpose.
-			If a packet arrives to the bridge, source address is mapped to the port from which the packed has arrived or if there already is
-			port mapped to this source address, that port can be updated. Then if there is some port mapped to destination address,
-			packet is forwarded to that port, otherwise packet is forwarded to all other bridge ports. After some amount of traffic on
-			network, bridge should know where all addresses are located and no more forwarding to all ports is necessary.
+			\textbf{Procedure of building up bridge dynamic table that maps addresses to ports} -- Bridges inspects
+			both the destination and source addresses. The source addresses are used for adding entries to the table
+			and for updating purpose. If a packet arrives to the bridge, source address is mapped to the port from
+			which the packed has arrived or if there already is port mapped to this source address, that port can be
+			updated. Then if there is some port mapped to destination address, packet is forwarded to that port,
+			otherwise packet is forwarded to all other bridge ports. After some amount of traffic on network, bridge
+			should know where all addresses are located and no more forwarding to all ports is necessary.
 
 		\item % 22.
 			\textbf{The key functionalities of bridges:}
 			\begin{description}
 				\item
-					Filtering -- Bridges have a table that maps addresses to ports. Based on this table, bridges checks destination
-					addresses of incoming packets and decides whether the packets should be forwarded and to which port or dropped.
+					Filtering -- Bridges have a table that maps addresses to ports. Based on this table, bridges
+					checks destination addresses of incoming packets and decides whether the packets should be
+					forwarded and to which port or dropped.
 
 				\item
-					Transparent and forwarding -- If a bridge is transparent, other nodes don't know about its existence. Forwarding table
-					is made automatically by learning packet movements in the network. Transparent bridges must correctly forward packets.
+					Transparent and forwarding -- If a bridge is transparent, other nodes don't know about its
+					existence. Forwarding table is made automatically by learning packet movements in the network.
+					Transparent bridges must correctly forward packets.
 
 				\item
-					Learning -- Learning enables bridges to build up a dynamic table that maps addresses to ports automatically. Bridges
-					inspects both the destination and source addresses. Procedure of bridges learning has been described in question number 21.
+					Learning -- Learning enables bridges to build up a dynamic table that maps addresses to ports
+					automatically. Bridges inspects both the destination and source addresses. Procedure of bridges
+					learning has been described in question number 21.
 			\end{description}
 
 			\textbf{Bridges and routers main differences:}
@@ -481,22 +510,24 @@
 					Routers operate at the layer 3 and contain a virtual map of the network.
 
 				\item
-					Routers use higher level (layer 3 - network) addresses. Bridges keep a table of layer 2 addresses of all active
-					nodes on all connected networks. A routers know how to reach another routers. Routers know all only about LANs
-					directly attached to that routers.
+					Routers use higher level (layer 3 - network) addresses. Bridges keep a table of layer 2 addresses
+					of all active nodes on all connected networks. A routers know how to reach another routers.
+					Routers know all only about LANs directly attached to that routers.
 			\end{itemize}
 
 		\item % 23.
-			Three transmission windows may be used in optical fiber communications systems because these windows are created at different
-			wavelengths (850\,nm, 1\,300\,nm and 1\,550\,nm).
+			Three transmission windows may be used in optical fiber communications systems because these windows are
+			created at different wavelengths (850\,nm, 1\,300\,nm and 1\,550\,nm).
 
-			A virtual communication path between two arbitrary users in an optical wide area network is created using both circuit switching
-			and packet switching at one or more intermediate nodes. Circuit switching is achieved by connecting different WDM channels in the
-			optical domain. Packet switching is achieved in the electrical domain by using protocols such as IP and ATM.
+			A virtual communication path between two arbitrary users in an optical wide area network is created using
+			both circuit switching and packet switching at one or more intermediate nodes. Circuit switching is
+			achieved by connecting different WDM channels in the optical domain. Packet switching is achieved in the
+			electrical domain by using protocols such as IP and ATM.
 
 		\item % 24.
-			\textbf{Key functionalities of the optical layer} -- Provide end-to-end optical connection between two nodes of the network and
-			transmit data between two nodes at the bit rate at which individual channels of a WDM system operate.
+			\textbf{Key functionalities of the optical layer} -- Provide end-to-end optical connection between two
+			nodes of the network and transmit data between two nodes at the bit rate at which individual channels
+			of a WDM system operate.
 
 			\textbf{Sub-layers contained in the optical layer are}
 			\begin{itemize}
