@@ -535,6 +535,39 @@
 				\item the optical multiplex layer and
 				\item optical channel layer.
 			\end{itemize}
+
+		\item % 25.
+			If the maximum window size in TCP congestion control is 32 segments and threshold is 16 segments, than:
+			\begin{itemize}
+				\item
+					The size of the congestion window after round 3 is \textbf{8} because congestion control starts
+					in slow-start phase with windows size 1 and because the window size in this phase grows
+					exponentially, in round 3 it is $ 2^3 = 8 $.
+
+				\item
+					The size of the congestion window after round 5 is \textbf{17} because congestion control starts
+					in slow-start phase with windows size 1 and because the window size in this phase grows
+					exponentially, it reaches threshold in round 4, which is $ 2^4 = 16 $ and then congestion control
+					moves to congestion avoidance phase where window size is increasing linearly so in round
+					5, it is $ 16 + 1 = 17 $.
+
+				\item
+					If a time-out occurs when the congestion window size is 20, the new threshold is \textbf{10},
+					because if a time-out occurs, threshold is set to one-half of the current window size,
+					which is $ 20 / 2 = 10 $. TCP congestion control should move to \textbf{slow-start phase}.
+
+				\item
+					The size of the congestion window after round 12 is \textbf{10}, because in round 8 when time-out
+					occurs, congestion control starts again in slow-start phase and in round 12, congestion window
+					size would reach 16, because round 12 is 4th round from round 8, which is $ 2^4 = 16 $, but
+					current threshold size is 10 so congestion window size is stopped in 10.
+
+				\item
+					If a three-acknowledgement event occurs when the congestion window size is 12, the new threshold
+					is \textbf{6}, because if a three-acknowledgement event occurs, threshold is set to one-half of
+					the current window size, which is $ 12/2 = 6 $. TCP congestion control should move to
+					\textbf{congestion avoidance phase}.
+			\end{itemize}
 	\end{enumerate}
 
 
